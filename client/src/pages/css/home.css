@@ -1,0 +1,92 @@
+/* home.css */
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /* Header Section */
+  header {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  header .text-blue-600 {
+    color: #3182ce;
+  }
+  
+  /* Hero Section */
+  section.bg-gradient-to-r {
+    background-image: linear-gradient(to right, #3182ce, #63b3ed);
+  }
+  
+  /* Quick Access Section */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .grid .bg-white {
+    background-color: white;
+  }
+  
+  /* Recent Activity Section */
+  section.bg-white {
+    background-color: #ffffff;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th,
+  table td {
+    padding: 8px 16px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #f7fafc;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: #f4f4f4;
+  }
+  
+  /* Footer Section */
+  footer {
+    background-color: #2d3748;
+    color: white;
+    padding: 20px 0;
+  }
+  
+  footer a {
+    color: white;
+    margin: 0 1rem;
+    transition: color 0.3s;
+  }
+  
+  footer a:hover {
+    color: #63b3ed;
+  }
+  
+  /* Button Customization */
+  button {
+    background-color: #63b3ed;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #3182ce;
+  }
+  
