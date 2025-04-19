@@ -1,92 +1,150 @@
-/* home.css */
-
 /* Global Styles */
 body {
-    font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Header Section */
+header {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .text-blue-600 {
+  color: #3182ce;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav a {
+  color: #333;
+  font-size: 16px;
+  margin: 0 12px;
+}
+
+nav a:hover {
+  color: #3182ce;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  background: linear-gradient(135deg, #3182ce, #63b3ed);
+  color: white;
+  padding: 80px 20px;
+}
+
+.hero-section h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Quick Access Section */
+.quick-access {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  text-align: center;
+}
+
+.quick-access-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.quick-access-card:hover {
+  transform: translateY(-5px);
+}
+
+.quick-access-card i {
+  font-size: 30px;
+  color: #3182ce;
+}
+
+/* Recent Activity Section */
+.recent-activity {
+  background: white;
+  margin: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recent-activity table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-activity th, .recent-activity td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.recent-activity th {
+  background-color: #f7fafc;
+  font-weight: bold;
+}
+
+.recent-activity tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+/* Footer Section */
+footer {
+  background-color: #2d3748;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+footer a {
+  color: white;
+  margin: 0 12px;
+}
+
+footer a:hover {
+  color: #63b3ed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      gap: 10px;
   }
-  
-  a {
-    text-decoration: none;
+  .quick-access {
+      grid-template-columns: 1fr;
   }
-  
-  /* Header Section */
-  header {
-    font-family: 'Arial', sans-serif;
+  .recent-activity {
+      margin: 20px;
   }
-  
-  header .text-blue-600 {
-    color: #3182ce;
-  }
-  
-  /* Hero Section */
-  section.bg-gradient-to-r {
-    background-image: linear-gradient(to right, #3182ce, #63b3ed);
-  }
-  
-  /* Quick Access Section */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .grid .bg-white {
-    background-color: white;
-  }
-  
-  /* Recent Activity Section */
-  section.bg-white {
-    background-color: #ffffff;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  table th,
-  table td {
-    padding: 8px 16px;
-    text-align: left;
-  }
-  
-  table th {
-    background-color: #f7fafc;
-  }
-  
-  table tbody tr:nth-child(even) {
-    background-color: #f4f4f4;
-  }
-  
-  /* Footer Section */
-  footer {
-    background-color: #2d3748;
-    color: white;
-    padding: 20px 0;
-  }
-  
-  footer a {
-    color: white;
-    margin: 0 1rem;
-    transition: color 0.3s;
-  }
-  
-  footer a:hover {
-    color: #63b3ed;
-  }
-  
-  /* Button Customization */
-  button {
-    background-color: #63b3ed;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #3182ce;
-  }
-  
+}

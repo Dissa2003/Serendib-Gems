@@ -4,6 +4,7 @@ import User from './getuser/User';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Update from './updateuser/Update';
 import Home from './pages/home'; // Import the Home component
+import AddGem from './pages/addgem';
 
 function App() {
   const route = createBrowserRouter([
@@ -12,12 +13,16 @@ function App() {
       element: <Home />,  // Set Home as the default route
     },
     {
+      path: "/add-gem",
+      element: <AddGem />,  // Set Home as the default route
+    },
+    {
       path: "/users",
       element: <User />, // You can move User to another route
     },
     {
       path: "/add",
-      element: <AddUser />,
+      element: <AddUser />, 
     },
     {
       path: "/update/:id",
