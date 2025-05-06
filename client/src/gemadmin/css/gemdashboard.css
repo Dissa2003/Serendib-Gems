@@ -1,0 +1,907 @@
+/* client/src/gemadmin/css/gemdashboard.css */
+:root {
+  --primary-color: #4361ee;
+  --primary-dark: #3a56d4;
+  --secondary-color: #e63946;
+  --secondary-dark: #d32f2f;
+  --text-dark: #2c3e50;
+  --text-light: #6c757d;
+  --background-light: #f8f9fa;
+  --border-color: #e9ecef;
+  --success-color: #2ecc71;
+  --card-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 5px 30px rgba(0, 0, 0, 0.3);
+  --border-radius: 10px;
+  --transition-speed: 0.3s;
+  --warning-color: #ffc107;
+}
+
+.gem-adm-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+}
+
+.gem-adm-content {
+  display: flex;
+  flex: 1;
+}
+
+.gem-adm-sidebar {
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.gem-adm-sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+
+.gem-adm-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gem-adm-logo-image {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.gem-adm-logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.gem-adm-nav-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gem-adm-nav-item {
+  padding: 0;
+}
+
+.gem-adm-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.gem-adm-nav-link:hover {
+  background-color: var(--background-light);
+}
+
+.gem-adm-nav-link.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.gem-adm-nav-link i {
+  font-size: 18px;
+}
+
+.gem-adm-main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 20px;
+}
+
+.gem-adm-page-title {
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.gem-adm-page-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--card-gradient);
+  border-radius: 2px;
+}
+
+/* Stats cards */
+.gem-adm-gem-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1.5rem;
+}
+
+.gem-adm-stat-card {
+  background: var(--card-gradient);
+  color: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  flex: 1;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gem-adm-stat-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.gem-adm-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.gem-adm-stat-card:hover::before {
+  opacity: 1;
+}
+
+.gem-adm-stat-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.gem-adm-stat-card p {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styles */
+.gem-adm-gem-table-container {
+  background-color: rgb(140, 147, 198);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: box-shadow var(--transition-speed) ease;
+  margin-bottom: 2rem;
+}
+
+.gem-adm-gem-table-container:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.gem-adm-gem-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gem-adm-gem-table th {
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  font-weight: 600;
+  text-align: left;
+  padding: 1.2rem 1rem;
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.gem-adm-gem-table td {
+  padding: 1.2rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+  transition: background-color 0.2s;
+}
+
+.gem-adm-gem-table tr:last-child td {
+  border-bottom: none;
+}
+
+.gem-adm-gem-table tr {
+  transition: background-color 0.2s ease;
+}
+
+.gem-adm-gem-table tr:hover {
+  background-color: rgba(58, 79, 176, 0.05);
+}
+
+.gem-adm-low-stock {
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+.gem-adm-gem-image-container {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-light);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.gem-adm-gem-image-container:hover {
+  transform: scale(1.05);
+}
+
+.gem-adm-gem-thumbnail {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.gem-adm-color-preview {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.gem-adm-color-preview:hover {
+  transform: scale(1.2);
+}
+
+.gem-adm-view-details-btn, .gem-adm-delete-btn, .gem-adm-verify-btn, .gem-adm-download-pdf-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gem-adm-view-details-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.gem-adm-view-details-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gem-adm-delete-btn {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.gem-adm-delete-btn:hover {
+  background-color: var(--secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gem-adm-verify-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.gem-adm-verify-btn:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gem-adm-download-pdf-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.gem-adm-download-pdf-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading and error states */
+.gem-adm-loading-container, .gem-adm-error-container {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  border-radius: var(--border-radius);
+  background-color: white;
+  box-shadow: var(--shadow-sm);
+  margin: 2rem 0;
+}
+
+.gem-adm-loading-container {
+  color: var(--text-light);
+  position: relative;
+}
+
+.gem-adm-loading-container::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(67, 97, 238, 0.2);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  margin: 1rem auto;
+  animation: gem-adm-spin 1s linear infinite;
+}
+
+@keyframes gem-adm-spin {
+  to { transform: rotate(360deg); }
+}
+
+.gem-adm-error-container {
+  color: var(--secondary-color);
+  border-left: 5px solid var(--secondary-color);
+}
+
+/* Modal styles */
+.gem-adm-gem-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: gem-adm-fadeIn 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+@keyframes gem-adm-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gem-adm-gem-modal {
+  background-color: white;
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  animation: gem-adm-slideUp 0.3s ease;
+}
+
+@keyframes gem-adm-slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.gem-adm-close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-light);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gem-adm-close-modal:hover {
+  color: var(--text-dark);
+  background-color: white;
+  transform: rotate(90deg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gem-adm-gem-modal-content {
+  display: flex;
+  padding: 2.5rem;
+  gap: 2.5rem;
+}
+
+.gem-adm-gem-modal-image {
+  flex: 0 0 40%;
+}
+
+.gem-adm-gem-modal-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease;
+}
+
+.gem-adm-gem-modal-image img:hover {
+  transform: scale(1.02);
+}
+
+.gem-adm-gem-modal-details {
+  flex: 1;
+}
+
+.gem-adm-gem-modal-details h2 {
+  color: var(--text-dark);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.gem-adm-gem-detail {
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.gem-adm-detail-label {
+  font-weight: 600;
+  color: var(--text-light);
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.gem-adm-detail-value {
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.gem-adm-color-preview-large {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 12px;
+  border: 3px solid white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.gem-adm-gem-detail.gem-adm-description {
+  flex-direction: column;
+}
+
+.gem-adm-gem-detail.gem-adm-description .gem-adm-detail-label {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.gem-adm-gem-detail.gem-adm-description .gem-adm-detail-value {
+  margin-top: 0.5rem;
+  line-height: 1.7;
+  background-color: var(--background-light);
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: normal;
+}
+
+.gem-adm-gem-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 2.5rem 2.5rem;
+  gap: 1rem;
+}
+
+/* Delete confirmation modal */
+.gem-adm-delete-confirm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  animation: gem-adm-fadeIn 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+.gem-adm-delete-confirm-content {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  animation: gem-adm-scaleIn 0.3s ease;
+}
+
+@keyframes gem-adm-scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.gem-adm-delete-confirm-content h3 {
+  color: var(--secondary-color);
+  margin-top: 0;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.gem-adm-delete-confirm-content p {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.gem-adm-delete-confirm-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1.5rem;
+}
+
+.gem-adm-cancel-btn, .gem-adm-confirm-delete-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gem-adm-cancel-btn {
+  background-color: var(--text-light);
+  color: white;
+}
+
+.gem-adm-cancel-btn:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gem-adm-confirm-delete-btn {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.gem-adm-confirm-delete-btn:hover {
+  background-color: var(--secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Search and filter styles */
+.gem-adm-search-filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.gem-adm-search-bar {
+  position: relative;
+  width: 300px;
+}
+
+.gem-adm-search-bar input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.gem-adm-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.gem-adm-filter-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.gem-adm-filter-toggle:hover {
+  background-color: #0056b3;
+}
+
+.gem-adm-add-gem-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.gem-adm-add-gem-btn:hover {
+  background-color: #218838;
+}
+
+.gem-adm-filters-panel {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.gem-adm-filters-panel.show {
+  display: grid;
+}
+
+.gem-adm-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gem-adm-filter-group label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.gem-adm-filter-group select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.gem-adm-clear-filters {
+  padding: 8px 16px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  align-self: flex-end;
+}
+
+.gem-adm-clear-filters:hover {
+  background-color: #5a6268;
+}
+
+.gem-adm-no-results {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.gem-adm-no-results h3 {
+  margin-bottom: 10px;
+}
+
+.gem-adm-results-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.gem-adm-download-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.gem-adm-download-all-pdf-btn, .gem-adm-download-filtered-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.gem-adm-download-all-pdf-btn:hover, .gem-adm-download-filtered-pdf-btn:hover {
+  background-color: #c82333;
+}
+
+.gem-adm-download-filtered-pdf-btn:disabled::after {
+  content: "No filtered gems to download";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  display: none;
+}
+
+.gem-adm-download-filtered-pdf-btn:disabled:hover::after {
+  display: block;
+}
+
+.gem-adm-gem-table th:nth-child(6),
+.gem-adm-gem-table td:nth-child(6) {
+  width: 100px;
+  text-align: center;
+}
+
+.gem-adm-gem-table th:nth-child(7),
+.gem-adm-gem-table td:nth-child(7) {
+  width: 100px;
+  text-align: center;
+}
+
+.gem-adm-gem-table th:nth-child(8),
+.gem-adm-gem-table td:nth-child(8) {
+  width: 400px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .gem-adm-gem-stats {
+    flex-wrap: wrap;
+  }
+  
+  .gem-adm-stat-card {
+    flex: 0 0 calc(50% - 0.75rem);
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gem-adm-page-title {
+    font-size: 2rem;
+  }
+  
+  .gem-adm-gem-stats {
+    flex-direction: column;
+  }
+  
+  .gem-adm-stat-card {
+    flex: 1 0 100%;
+  }
+  
+  .gem-adm-gem-modal-content {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  
+  .gem-adm-gem-modal-image {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .gem-adm-gem-table th:nth-child(3),
+  .gem-adm-gem-table td:nth-child(3),
+  .gem-adm-gem-table th:nth-child(4),
+  .gem-adm-gem-table td:nth-child(4) {
+    display: none;
+  }
+  
+  .gem-adm-view-details-btn, .gem-adm-delete-btn, .gem-adm-verify-btn, .gem-adm-download-pdf-btn {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .gem-adm-gem-modal-details h2 {
+    font-size: 1.8rem;
+  }
+  
+  .gem-adm-sidebar {
+    width: 200px;
+  }
+  
+  .gem-adm-main-content {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gem-adm-page-title {
+    font-size: 1.8rem;
+  }
+  
+  .gem-adm-gem-table th:nth-child(5),
+  .gem-adm-gem-table td:nth-child(5),
+  .gem-adm-gem-table th:nth-child(6),
+  .gem-adm-gem-table td:nth-child(6) {
+    display: none;
+  }
+  
+  .gem-adm-gem-modal {
+    width: 95%;
+  }
+  
+  .gem-adm-delete-confirm-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+  
+  .gem-adm-sidebar {
+    width: 60px;
+  }
+  
+  .gem-adm-main-content {
+    margin-left: 60px;
+  }
+  
+  .gem-adm-logo-text, .gem-adm-nav-link span {
+    display: none;
+  }
+  
+  .gem-adm-nav-link i {
+    font-size: 20px;
+  }
+}

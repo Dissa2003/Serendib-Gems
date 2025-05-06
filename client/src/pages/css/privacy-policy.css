@@ -1,0 +1,87 @@
+/* privacy-policy.css */
+
+/* Container for the privacy policy page */
+.privacy-policy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 20px;
+    background-color: #f4f7fc;
+    min-height: 100vh;
+  }
+  
+  /* Content section styling */
+  .privacy-policy-content {
+    background-color: white;
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /* Privacy Policy Title */
+  .privacy-policy-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Privacy Policy Introductory text */
+  .privacy-policy-text {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  /* Subtitle styles */
+  .privacy-policy-subtitle {
+    font-size: 20px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* List style */
+  .privacy-policy-list {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 16px;
+  }
+  
+  .privacy-policy-list li {
+    margin-bottom: 10px;
+  }
+  
+  /* Footer styling */
+  footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .privacy-policy-content {
+      padding: 20px;
+    }
+  
+    .privacy-policy-title {
+      font-size: 28px;
+    }
+  
+    .privacy-policy-text {
+      font-size: 16px;
+    }
+  
+    .privacy-policy-list li {
+      font-size: 14px;
+    }
+  }
+  

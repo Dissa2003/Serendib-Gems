@@ -14,7 +14,7 @@ const User = () => {
         useEffect(() => {
           const fetchData = async () => {
             try {
-              const response = await axios.get("http://localhost:8000/api/users");
+              const response = await axios.get("http://localhost:8000/api/users/users");
               setUsers(response.data);
             } catch (error) {
               console.log("Error while fetching data", error);
@@ -25,7 +25,7 @@ const User = () => {
 
         const deleteUser = async (userId) => {
           await axios
-            .delete(`http://localhost:8000/api/delete/user/${userId}`)
+            .delete(`http://localhost:8000/api/users/delete/user/${userId}`)
             .then((response) => {
               setUsers((prevUser) => prevUser.filter((user) => user._id !== userId));
               toast.success(response.data.message, { position: "top-right" });
@@ -53,7 +53,7 @@ const User = () => {
                 <th scope="col">S.No</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
-                <th scope="col">Address</th>
+                <th scope="col">userType</th>
                 <th scope="col">Actions</th>
                     
 
@@ -67,7 +67,7 @@ const User = () => {
                         <td>{index+1}</td>
                         <td>{user.name}</td>
                         <td>{user.email}</td>
-                        <td>{user.address}</td>
+                        <td>{user.userType}</td>
                         <td className="actionButtons">
                         <Link to={`/update/`+ user._id} type="button" class="btn btn-secondary">Update <i class="fa-solid fa-pen-to-square"></i></Link>
                         <button

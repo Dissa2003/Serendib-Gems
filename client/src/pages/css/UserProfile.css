@@ -1,0 +1,110 @@
+/* userprofile.css */
+
+/* Container for the entire profile page */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f4f7fc;
+  min-height: 100vh;
+}
+
+/* Profile card styles */
+.profile-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Profile picture styles */
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* Profile name styles */
+.profile-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Profile info styles */
+.profile-info {
+  font-size: 16px;
+  color: #555;
+  margin: 8px 0;
+  text-align: left;
+}
+
+/* Profile actions (buttons) */
+.profile-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Button styles */
+.update-btn,
+.delete-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.update-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.update-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-btn:hover {
+  background-color: #e53935;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .profile-card {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .profile-name {
+    font-size: 20px;
+  }
+
+  .profile-info {
+    font-size: 14px;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .update-btn,
+  .delete-btn {
+    width: 100%;
+  }
+}

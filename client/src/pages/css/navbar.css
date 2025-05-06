@@ -1,16 +1,314 @@
-.nav-item {
-    color: #34495e;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 8px 12px;
-    transition: color 0.3s ease;
+/* Serendib Gems Navbar Styles
+   Unique class names prefixed with 'sg-' to prevent conflicts
+*/
+
+/* Basic Reset */
+.sg-navbar-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.nav-item:hover {
-    color: #3498db;
+/* Main Navbar Container */
+.sg-navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  padding: 15px 0;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.nav-icon {
-    margin-right: 5px;
-    font-size: 18px;
+/* Scrolled state */
+.sg-navbar-container.sg-scrolled {
+  padding: 10px 0;
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Content - Grid Layout */
+.sg-navbar-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  align-items: center;
+}
+
+/* Logo Styling */
+.sg-navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.sg-navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.sg-logo-icon {
+  font-size: 28px;
+  color: #e879f9; /* Purple gem color */
+  filter: drop-shadow(0 0 8px rgba(232, 121, 249, 0.5));
+}
+
+.sg-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sg-logo-main {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #f9fafb, #e879f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sg-logo-sub {
+  font-size: 16px;
+  font-weight: 400;
+  color: #cbd5e1;
+  letter-spacing: 2px;
+  margin-top: -5px;
+}
+
+/* Navigation Menu */
+.sg-navbar-center {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.sg-nav-item {
+  position: relative;
+  padding: 8px 16px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sg-nav-text {
+  position: relative;
+  z-index: 2;
+}
+
+.sg-nav-item:hover {
+  color: #ffffff;
+}
+
+.sg-nav-item-underline {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #e879f9, #c084fc);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.sg-nav-item:hover .sg-nav-item-underline {
+  width: 70%;
+  opacity: 1;
+}
+
+.sg-nav-item.sg-active {
+  color: #ffffff;
+}
+
+.sg-nav-item.sg-active .sg-nav-item-underline {
+  width: 70%;
+  opacity: 1;
+  height: 3px;
+  box-shadow: 0 0 10px rgba(232, 121, 249, 0.7);
+}
+
+/* Right Side - Logout Button */
+.sg-navbar-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.sg-logout-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #9333ea 0%, #c026d3 100%);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.sg-logout-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(194, 24, 239, 0.4);
+}
+
+.sg-logout-button:active {
+  transform: translateY(0);
+}
+
+.sg-logout-icon {
+  font-size: 16px;
+}
+
+/* Mobile Menu Toggle */
+.sg-mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/* Mobile-specific elements */
+.sg-mobile-buttons {
+  display: none;
+}
+
+.sg-mobile-button {
+  margin-top: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .sg-navbar-content {
+    grid-template-columns: 1fr auto;
+  }
+  
+  .sg-navbar-center {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.98);
+    flex-direction: column;
+    padding: 20px;
+    align-items: flex-start;
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    max-height: 0;
+  }
+  
+  .sg-navbar-center.sg-mobile-active {
+    transform: translateY(0);
+    opacity: 1;
+    max-height: 100vh;
+    padding: 30px;
+  }
+  
+  .sg-nav-item {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .sg-nav-item-underline {
+    display: none;
+  }
+  
+  .sg-nav-item.sg-active {
+    background: rgba(232, 121, 249, 0.1);
+    border-radius: 8px;
+    padding-left: 10px;
+  }
+  
+  .sg-mobile-menu-toggle {
+    display: block;
+  }
+  
+  .sg-desktop-button {
+    display: none;
+  }
+  
+  .sg-mobile-buttons {
+    display: block;
+    width: 100%;
+  }
+  
+  .sg-navbar-content {
+    padding: 0 20px;
+  }
+}
+
+/* Animation for Mobile Menu Items */
+@media (max-width: 1024px) {
+  .sg-mobile-active .sg-nav-item {
+    animation: slideIn 0.4s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .sg-mobile-active .sg-nav-item:nth-child(1) { animation-delay: 0.1s; }
+  .sg-mobile-active .sg-nav-item:nth-child(2) { animation-delay: 0.2s; }
+  .sg-mobile-active .sg-nav-item:nth-child(3) { animation-delay: 0.3s; }
+  .sg-mobile-active .sg-nav-item:nth-child(4) { animation-delay: 0.4s; }
+  .sg-mobile-active .sg-nav-item:nth-child(5) { animation-delay: 0.5s; }
+  
+  .sg-mobile-active .sg-mobile-buttons {
+    animation: slideIn 0.4s forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glass effect enhancement */
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .sg-navbar-container {
+    background: rgba(15, 23, 42, 0.7);
+  }
+  
+  .sg-navbar-container.sg-scrolled {
+    background: rgba(15, 23, 42, 0.85);
+  }
+}
+
+/* Gem shine animation on logo */
+@keyframes gemShine {
+  0% { filter: drop-shadow(0 0 3px rgba(232, 121, 249, 0.5)); }
+  50% { filter: drop-shadow(0 0 12px rgba(232, 121, 249, 0.8)); }
+  100% { filter: drop-shadow(0 0 3px rgba(232, 121, 249, 0.5)); }
+}
+
+.sg-navbar-logo:hover .sg-logo-icon {
+  animation: gemShine 1.5s infinite;
 }

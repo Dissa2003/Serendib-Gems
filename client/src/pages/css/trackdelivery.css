@@ -1,0 +1,315 @@
+/* trackdelivery.css */
+.track-delivery-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+}
+
+.track-delivery-container {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.track-delivery-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.track-delivery-header h1 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.track-delivery-header p {
+  color: #666;
+}
+
+.track-form-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.track-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-divider {
+  text-align: center;
+  font-weight: 600;
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.track-button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.track-button:hover {
+  background-color: #3a7bc8;
+}
+
+.track-button:disabled {
+  background-color: #a0c0e8;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #dc3545;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.delivery-status-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.delivery-status-header {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.delivery-status-header h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.tracking-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.tracking-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tracking-detail span:first-child {
+  font-weight: 600;
+  color: #666;
+}
+
+.copy-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copy-button {
+  background: none;
+  border: none;
+  color: #4a90e2;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-button:hover {
+  color: #3a7bc8;
+}
+
+.copied-notification {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #28a745;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.delivery-progress {
+  margin-bottom: 2rem;
+}
+
+.progress-tracker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.step-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #adb5bd;
+  font-size: 1.25rem;
+  transition: all 0.3s;
+}
+
+.progress-step.active .step-icon {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.step-label {
+  font-size: 0.875rem;
+  color: #666;
+  text-align: center;
+  font-weight: 500;
+}
+
+.progress-line {
+  flex: 1;
+  height: 3px;
+  background-color: #e9ecef;
+  position: relative;
+}
+
+.progress-step.active + .progress-line {
+  background-color: #4a90e2;
+}
+
+.current-status {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.status-badge {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+}
+
+.status-badge span {
+  color: #4a90e2;
+  margin-left: 0.25rem;
+}
+
+.delivery-updates {
+  margin-top: 2rem;
+}
+
+.delivery-updates h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.updates-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.update-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.update-icon {
+  color: #28a745;
+  font-size: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.update-content {
+  flex: 1;
+}
+
+.update-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.update-status {
+  font-weight: 600;
+  color: #333;
+}
+
+.update-datetime {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.update-location {
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .tracking-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .progress-tracker {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .progress-line {
+    width: 3px;
+    height: 30px;
+  }
+  
+  .update-header {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}

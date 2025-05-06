@@ -1,0 +1,101 @@
+/* shipping-policy.css */
+
+/* Container for the shipping policy page */
+.shipping-policy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  /* Content section styling */
+  .shipping-policy-content {
+    background-color: white;
+    max-width: 900px;
+    width: 100%;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+  }
+  
+  /* Shipping Policy Title */
+  .shipping-policy-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Shipping Policy Text */
+  .shipping-policy-text {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Image Container */
+  .image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .shipping-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Subtitle styles */
+  .shipping-policy-subtitle {
+    font-size: 22px;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+  /* List style */
+  .shipping-policy-list {
+    font-size: 16px;
+    padding-left: 20px;
+  }
+  
+  .shipping-policy-list li {
+    margin-bottom: 10px;
+  }
+  
+  /* Footer styling */
+  footer {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .shipping-policy-content {
+      padding: 20px;
+    }
+  
+    .shipping-policy-title {
+      font-size: 28px;
+    }
+  
+    .shipping-policy-text {
+      font-size: 16px;
+    }
+  
+    .shipping-policy-list li {
+      font-size: 14px;
+    }
+  }
+  

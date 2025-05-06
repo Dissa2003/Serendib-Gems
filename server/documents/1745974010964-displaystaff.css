@@ -1,0 +1,636 @@
+.ds-container {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --danger-color: #ef4444;
+    --danger-hover: #dc2626;
+    --success-color: #10b981;
+    --success-hover: #059669;
+    --bg-color: #f9fafb;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --border-radius: 0.5rem;
+    --transition: all 0.3s ease;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+  }
+  
+  /* Content layout */
+  .ds-content {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Sidebar styles */
+  .ds-sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  
+  .ds-sidebar-header {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .ds-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .ds-logo-image {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  
+  .ds-logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+  }
+  
+  .ds-nav-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ds-nav-item {
+    padding: 0.5rem 1rem;
+  }
+  
+  .ds-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    transition: var(--transition);
+  }
+  
+  .ds-nav-link:hover {
+    background-color: #f3f4f6;
+    color: #1f2937;
+  }
+  
+  .ds-nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .ds-nav-link.active:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  /* Main content */
+  .ds-main-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: var(--bg-color);
+  }
+  
+  .ds-staff-management {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header section */
+  .ds-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Page title styles */
+  .ds-page-title {
+    color: #1f2937;
+    font-size: 2rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .ds-page-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+  }
+  
+  /* Error message */
+  .ds-error-message {
+    background-color: #fee2e2;
+    border-left: 4px solid #ef4444;
+    color: #b91c1c;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    animation: ds-slideIn 0.3s ease-out;
+  }
+  
+  @keyframes ds-slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Loading state */
+  .ds-loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  
+  /* Table styles */
+  .ds-staff-table-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  
+  .ds-staff-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  .ds-staff-table th {
+    background-color: #f3f4f6;
+    color: #374151;
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .ds-staff-table tbody tr {
+    transition: var(--transition);
+  }
+  
+  .ds-staff-table tbody tr:hover {
+    background-color: #f9fafb;
+  }
+  
+  .ds-staff-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #4b5563;
+    vertical-align: middle;
+  }
+  
+  .ds-staff-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Profile image styles */
+  .ds-profile-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+  }
+  
+  .ds-profile-image:hover {
+    transform: scale(1.1);
+  }
+  
+  .ds-no-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    font-size: 0.75rem;
+  }
+  
+  /* Staff role badge */
+  .ds-role-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .ds-role-badge.inventory-manager {
+    background-color: #e0f2fe;
+    color: #0369a1;
+  }
+  
+  .ds-role-badge.gem-cutter {
+    background-color: #f0fdf4;
+    color: #15803d;
+  }
+  
+  .ds-role-badge.financial-manager {
+    background-color: #fef9c3;
+    color: #854d0e;
+  }
+  
+  .ds-role-badge.delivery-manager {
+    background-color: #f3e8ff;
+    color: #7e22ce;
+  }
+  
+  .ds-role-badge.employee {
+    background-color: #f3f4f6;
+    color: #4b5563;
+  }
+  
+  .ds-role-badge.na {
+    background-color: #f3f4f6;
+    color: #9ca3af;
+  }
+  
+  /* Button styles */
+  .ds-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    white-space: nowrap;
+  }
+  
+  .ds-btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .ds-btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+  }
+  
+  .ds-btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+  }
+  
+  .ds-btn-danger:hover {
+    background-color: var(--danger-hover);
+    transform: translateY(-1px);
+  }
+  
+  .ds-btn-secondary {
+    background-color: #6b7280;
+    color: white;
+  }
+  
+  .ds-btn-secondary:hover {
+    background-color: #4b5563;
+    transform: translateY(-1px);
+  }
+  
+  .ds-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Action buttons container */
+  .ds-action-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  /* Controls container (Search and Filter) */
+  .ds-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .ds-search-container {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .ds-filter-container {
+    min-width: 150px;
+  }
+  
+  /* Modal styles */
+  .ds-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: ds-fadeIn 0.3s ease-out;
+  }
+  
+  @keyframes ds-fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .ds-modal-content {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 32rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: ds-slideUp 0.3s ease-out;
+  }
+  
+  @keyframes ds-slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .ds-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .ds-modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .ds-close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #6b7280;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .ds-close-button:hover {
+    color: #1f2937;
+  }
+  
+  /* Form styles */
+  .ds-form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  .ds-form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  .ds-form-label.required::after {
+    content: '*';
+    color: var(--danger-color);
+    margin-left: 0.25rem;
+  }
+  
+  .ds-form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    transition: var(--transition);
+  }
+  
+  .ds-form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  }
+  
+  .ds-form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+  }
+  
+  .ds-form-file {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    transition: var(--transition);
+    background-color: white;
+  }
+  
+  .ds-form-file::-webkit-file-upload-button {
+    padding: 0.375rem 0.75rem;
+    margin-right: 0.75rem;
+    background-color: #f3f4f6;
+    border: none;
+    border-radius: 0.25rem;
+    color: #4b5563;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .ds-form-file::-webkit-file-upload-button:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .ds-current-image-container {
+    margin-top: 1rem;
+  }
+  
+  .ds-current-image-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+  }
+  
+  .ds-current-image {
+    width: 96px;
+    height: 96px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    border: 2px solid #e5e7eb;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1024px) {
+    .ds-staff-table-container {
+      overflow-x: auto;
+    }
+  
+    .ds-content {
+      flex-direction: column;
+    }
+  
+    .ds-sidebar {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 0.5rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .ds-sidebar-header {
+      flex: 1;
+      padding: 0.5rem;
+    }
+  
+    .ds-nav-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  
+    .ds-nav-item {
+      padding: 0;
+    }
+  
+    .ds-nav-link {
+      padding: 0.5rem;
+      font-size: 0.75rem;
+    }
+  
+    .ds-main-content {
+      padding: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .ds-header-section {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .ds-staff-table th,
+    .ds-staff-table td {
+      padding: 0.75rem;
+    }
+  
+    .ds-action-buttons {
+      flex-direction: column;
+    }
+  
+    .ds-btn {
+      width: 100%;
+    }
+  
+    .ds-controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .ds-search-container,
+    .ds-filter-container {
+      min-width: 100%;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .ds-page-title {
+      font-size: 1.5rem;
+    }
+  
+    .ds-staff-table {
+      display: block;
+    }
+  
+    .ds-staff-table thead {
+      display: none;
+    }
+  
+    .ds-staff-table tbody {
+      display: block;
+    }
+  
+    .ds-staff-table tr {
+      display: block;
+      margin-bottom: 1rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.375rem;
+      padding: 1rem;
+    }
+  
+    .ds-staff-table td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed #e5e7eb;
+    }
+  
+    .ds-staff-table td:last-child {
+      border-bottom: none;
+    }
+  
+    .ds-staff-table td:before {
+      content: attr(data-label);
+      font-weight: 600;
+      color: #374151;
+    }
+  }

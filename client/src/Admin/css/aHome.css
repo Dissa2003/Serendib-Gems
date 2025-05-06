@@ -1,0 +1,220 @@
+:root {
+    --primary: #7c4dff;
+    --primary-light: #b47cff;
+    --primary-dark: #3f1dcb;
+    --secondary: #00bcd4;
+    --dark-bg: #1a1a2e;
+    --dark-surface: #16213e;
+    --dark-card: #0f3460;
+    --text-light: #f8f9fa;
+    --text-muted: #adb5bd;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --danger: #f44336;
+    --info: #2196f3;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+  }
+  
+  .dashboard-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* SIDEBAR STYLES */
+  .sidebar {
+    width: 260px;
+    background-color: var(--dark-surface);
+    padding: 1.5rem 0;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar-header {
+    padding: 0 1.5rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .logo-icon {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-text {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 1.25rem;
+  }
+  
+  .nav-items {
+    margin-top: 1.5rem;
+    padding: 0 0.75rem;
+  }
+  
+  .nav-item {
+    list-style: none;
+    margin-bottom: 0.5rem;
+  }
+  
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(124, 77, 255, 0.1);
+    color: var(--text-light);
+  }
+  
+  .nav-link.active {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  /* MAIN CONTENT STYLES */
+  .main-content {
+    flex: 1;
+    margin-left: 260px;
+    padding: 0 1.5rem 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  /* DASHBOARD GRID */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-card {
+    background-color: var(--dark-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .dashboard-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .card-icon {
+    background-color: rgba(124, 77, 255, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+  }
+  
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .dashboard-btn {
+    background-color: var(--dark-surface);
+    border: none;
+    color: var(--text-light);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  
+  .dashboard-btn:hover {
+    background-color: var(--primary);
+  }
+  
+  .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+  }
+  
+  /* RESPONSIVE STYLES */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .main-content {
+      margin-left: 0;
+    }
+    .show-sidebar .sidebar {
+      width: 260px;
+      padding: 1.5rem 0;
+    }
+    .menu-toggle {
+      display: flex;
+    }
+  }

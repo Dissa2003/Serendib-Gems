@@ -1,0 +1,344 @@
+/* Global Styles and Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-25px) rotate(180deg) scale(1.1);
+        opacity: 0.9;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    line-height: 1.6;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246uum, 0.3);
+}
+
+/* Main Container */
+.welcome-container {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #e6f0fa, #f0f7ff, #fef9e7);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Floating Gems Background */
+.gem-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.floating-gem {
+    position: absolute;
+    border-radius: 30%;
+    background: linear-gradient(45deg, #60a5fa, #3b82f6);
+    animation: float infinite ease-in-out;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.spinner-container {
+    position: relative;
+    display: inline-block;
+}
+
+.spinner {
+    width: 5rem;
+    height: 5rem;
+    border: 5px solid transparent;
+    border-top-color: #60a5fa;
+    border-right-color: #3b82f6;
+    border-bottom-color: #93c5fd;
+    border-left-color: #bfdbfe;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+}
+
+.spinner-icon {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    color: #3b82f6;
+}
+
+.loading-text {
+    margin-top: 1.5rem;
+    color: #2563eb;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+/* Main Content Container */
+.main-container {
+    flex: 1;
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Header */
+.welcome-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.sparkle-icon {
+    color: #3b82f6;
+    margin: 0 0.75rem;
+}
+
+.site-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #2563eb, #60a5fa, #93c5fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@media (min-width: 768px) {
+    .site-title {
+        font-size: 3.5rem;
+    }
+}
+
+.site-tagline {
+    color: #2563eb;
+    font-size: 1.25rem;
+    font-style: italic;
+    font-family: 'Inter', sans-serif;
+}
+
+@media (min-width: 768px) {
+    .site-tagline {
+        font-size: 1.5rem;
+    }
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 32rem;
+}
+
+/* Card */
+.card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.card-title {
+    color: #1e3a8a;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.card-subtitle {
+    color: #4b5563;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Theme Description */
+.theme-description {
+    margin-top: 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.theme-title {
+    color: #1e3a8a;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.theme-text {
+    color: #4b5563;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.login-button,
+.signup-button {
+    width: 100%;
+    padding: 0.85rem 0;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.login-button {
+    background: linear-gradient(to right, #2563eb, #3b82f6);
+}
+
+.signup-button {
+    background: linear-gradient(to right, #60a5fa, #93c5fd);
+    color: #1e3a8a;
+}
+
+.login-button:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    transform: translateY(-2px);
+}
+
+.signup-button:hover {
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.4);
+    transform: translateY(-2px);
+}
+
+.button-icon {
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.login-button:hover .button-icon,
+.signup-button:hover .button-icon {
+    transform: translateX(4px);
+}
+
+/* Description */
+.description {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.description-text {
+    color: #4b5563;
+    font-size: 1rem;
+    max-width: 28rem;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Footer */
+.welcome-footer {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #4b5563;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.copyright {
+    margin-bottom: 0;
+}
+
+.admin-button {
+    display: flex;
+    align-items: center;
+    color: #4b5563;
+    font-size: 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.admin-button:hover {
+    color: #2563eb;
+}
+
+.admin-icon {
+    margin-right: 0.25rem;
+}

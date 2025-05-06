@@ -8,7 +8,7 @@ const UpdateUser = () => {
   const users = {
     name: "",
     email: "",
-    address: "",
+    userType: "",
   };
   const [user, setUser] = useState(users);
   const navigate = useNavigate();

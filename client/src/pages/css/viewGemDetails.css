@@ -1,0 +1,814 @@
+/* client/src/pages/css/viewGemDetails.css */
+
+.gem-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+.gem-details-breadcrumb {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.gem-details-breadcrumb a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.gem-details-breadcrumb a:hover {
+  color: #6a5acd;
+}
+
+.breadcrumb-separator {
+  margin: 0 0.5rem;
+  font-size: 0.7rem;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #6a5acd;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s;
+}
+
+.back-button:hover {
+  color: #483d8b;
+}
+
+.purchase-status {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+.purchase-status.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.purchase-status.error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.gem-details-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.gem-details-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.gem-main-image {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+}
+
+.gem-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.gem-main-image:hover img {
+  transform: scale(1.05);
+}
+
+.gem-thumbnails {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.gem-thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.gem-thumbnail.active {
+  border-color: #6a5acd;
+}
+
+.gem-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gem-details-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gem-details-header {
+  margin-bottom: 1rem;
+}
+
+.gem-category {
+  display: inline-block;
+  background-color: #f0f0f0;
+  color: #666;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gem-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  color: #333;
+  line-height: 1.2;
+}
+
+.gem-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.stars {
+  display: flex;
+  color: #ffc107;
+}
+
+.star-inactive {
+  color: #e0e0e0;
+}
+
+.rating-count {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.gem-price-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.gem-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #6a5acd;
+}
+
+.gem-availability {
+  display: inline-block;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.gem-description {
+  margin-bottom: 1.5rem;
+}
+
+.gem-description h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.gem-description p {
+  line-height: 1.6;
+  color: #555;
+}
+
+.gem-specifications {
+  margin-bottom: 1.5rem;
+}
+
+.gem-specifications h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spec-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6a5acd;
+  font-size: 1.2rem;
+}
+
+.color-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px #ddd;
+}
+
+.spec-content {
+  flex: 1;
+}
+
+.spec-label {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+}
+
+.spec-value {
+  font-weight: 600;
+  color: #333;
+}
+
+.gem-purchase-options {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.quantity-selector label {
+  font-weight: 600;
+  color: #333;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.quantity-btn {
+  width: 36px;
+  height: 36px;
+  background-color: #f0f0f0;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.quantity-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.quantity-controls input {
+  width: 50px;
+  height: 36px;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  
+}
+
+.quantity-controls input::-webkit-outer-spin-button,
+.quantity-controls input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.purchase-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.buy-now-btn, .add-to-cart-btn, .add-to-wishlist-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.buy-now-btn {
+  background-color: #6a5acd;
+  color: white;
+  flex: 1;
+}
+
+.buy-now-btn:hover {
+  background-color: #5849b6;
+}
+
+.add-to-cart-btn {
+  background-color: #4caf50;
+  color: white;
+  flex: 1;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #388e3c;
+}
+
+.add-to-wishlist-btn {
+  background-color: white;
+  color: #ff4081;
+  border: 1px solid #ff4081;
+}
+
+.add-to-wishlist-btn:hover {
+  background-color: #fff0f5;
+}
+
+.gem-share {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gem-share span {
+  font-weight: 600;
+  color: #333;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.share-btn.facebook {
+  background-color: #3b5998;
+  color: white;
+}
+
+.share-btn.twitter {
+  background-color: #1da1f2;
+  color: white;
+}
+
+.share-btn.pinterest {
+  background-color: #bd081c;
+  color: white;
+}
+
+.gem-details-tabs {
+  margin: 3rem 0;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tabs-header {
+  display: flex;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eee;
+}
+
+.tab-btn {
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+  position: relative;
+}
+
+.tab-btn.active {
+  color: #6a5acd;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #6a5acd;
+}
+
+.tab-content {
+  padding: 2rem;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.tab-pane h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.tab-pane h4 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.5rem;
+  color: #333;
+}
+
+.tab-pane p {
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.related-gems-section {
+  margin: 3rem 0;
+}
+
+.related-gems-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.related-gems-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.related-gem-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.related-gem-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.related-gem-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.related-gem-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.related-gem-card:hover .related-gem-image img {
+  transform: scale(1.05);
+}
+
+.related-gem-info {
+  padding: 1rem;
+  background-color: white;
+}
+
+.related-gem-info h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.related-gem-price {
+  font-weight: 700;
+  color: #6a5acd;
+}
+
+.gem-details-loading, .gem-details-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #6a5acd;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .gem-details-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .related-gems-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .purchase-buttons {
+    flex-direction: column;
+  }
+  
+  .gem-details-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gem-title {
+    font-size: 2rem;
+  }
+  
+  .gem-main-image {
+    height: 300px;
+  }
+  
+  .gem-thumbnails {
+    justify-content: center;
+  }
+  
+  .tabs-header {
+    flex-wrap: wrap;
+  }
+  
+  .tab-btn {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 0.8rem;
+  }
+  
+  .gem-share {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .share-buttons {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .related-gems-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gem-price-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .quantity-selector {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .quantity-controls {
+    margin-top: 0.5rem;
+  }
+  
+  .gem-main-image {
+    height: 250px;
+  }
+  
+  .gem-thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .gem-title {
+    font-size: 1.8rem;
+  }
+  
+  .tab-content {
+    padding: 1.5rem;
+  }
+  
+  .gem-details-container {
+    padding: 1rem;
+  }
+}
+
+/* Animation for gem details */
+.gem-details-content {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects for buttons */
+.buy-now-btn, .add-to-cart-btn, .add-to-wishlist-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.buy-now-btn::after, .add-to-cart-btn::after, .add-to-wishlist-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.buy-now-btn:active::after, .add-to-cart-btn:active::after, .add-to-wishlist-btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Custom scrollbar for the page */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6a5acd;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5849b6;
+}
+
+/* Additional styles for gem details enhancement */
+.gem-details-container {
+  position: relative;
+}
+
+.gem-details-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(106, 90, 205, 0.1) 0%, rgba(106, 90, 205, 0.05) 100%);
+  z-index: -1;
+  border-radius: 0 0 50% 50% / 20px;
+}
+
+/* Enhanced tab interaction */
+.tab-btn {
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: #6a5acd;
+  background-color: rgba(106, 90, 205, 0.05);
+}
+
+/* Gem certificate style */
+.spec-item:nth-child(5) .spec-value {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+  color: #6a5acd;
+}
+
+/* Enhanced image gallery */
+.gem-main-image {
+  position: relative;
+}
+
+.gem-main-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 70%, rgba(106, 90, 205, 0.1) 100%);
+  pointer-events: none;
+}
+
+/* Price tag style */
+.gem-price {
+  position: relative;
+  display: inline-block;
+}
+
+.gem-price::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #6a5acd, transparent);
+}
