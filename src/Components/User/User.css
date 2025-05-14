@@ -1,0 +1,617 @@
+/* User.css - Advanced professional styling with proper scoping */
+/* Created: April 16, 2025 */
+
+/* Main container - all selectors scoped with .user-container to avoid conflicts */
+.user-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme variants with proper scoping */
+.user-container.light {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.user-container.dark {
+  background-color: #1a1d21;
+  color: #f0f2f5;
+}
+
+/* Main content area */
+.user-container .user-main {
+  flex: 1;
+  padding: 2rem max(4rem, 5%);
+  margin-top: 3.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card layout with subtle shadows and rounded corners */
+.user-container .user-card {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 
+              0 1px 8px rgba(0, 0, 0, 0.03), 
+              0 4px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease;
+}
+
+.user-container.light .user-card {
+  background-color: white;
+}
+
+.user-container.dark .user-card {
+  background-color: #282c34;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 
+              0 1px 8px rgba(0, 0, 0, 0.15), 
+              0 4px 8px rgba(0, 0, 0, 0.18);
+}
+
+/* User profile section */
+.user-container .user-profile {
+  flex: 1;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Profile header with clean layout */
+.user-container .profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Stylish avatar with gradient background */
+.user-container .profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+  position: relative;
+  background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-container .profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* User name styling */
+.user-container .profile-header h1 {
+  margin: 0.5rem 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Email styling */
+.user-container .user-email {
+  margin: 0.25rem 0 1rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.user-container.light .user-email {
+  color: #555;
+}
+
+.user-container.dark .user-email {
+  color: #bbb;
+}
+
+.user-container .user-email:hover {
+  opacity: 1;
+}
+
+/* Role badge with subtle styling */
+.user-container .role-badge {
+  display: inline-block;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.user-container .role-badge.light {
+  background-color: #e6f7ff;
+  color: #0078d4;
+  border: 1px solid rgba(0, 120, 212, 0.1);
+}
+
+.user-container .role-badge.dark {
+  background-color: #1e3a5f;
+  color: #7cc5ff;
+  border: 1px solid rgba(124, 197, 255, 0.1);
+}
+
+/* User details section */
+.user-container .user-details {
+  margin: 2rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1.5rem 0;
+}
+
+.user-container.dark .user-details {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Detail items with proper alignment */
+.user-container .detail-item {
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.user-container .detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.user-container .detail-label {
+  flex: 0 0 100px;
+  font-weight: 600;
+  color: #555;
+}
+
+.user-container.dark .detail-label {
+  color: #aaa;
+}
+
+.user-container .detail-value {
+  flex: 1;
+  word-break: break-all;
+}
+
+/* Action buttons with refined styling */
+.user-container .user-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.user-container .action-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: none;
+  min-width: 120px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Update button styling */
+.user-container .update-btn.light {
+  background-color: #f0f7ff;
+  color: #0078d4;
+  border: 1px solid #cce5ff;
+}
+
+.user-container .update-btn.dark {
+  background-color: #1e3a5f;
+  color: #7cc5ff;
+  border: 1px solid #2c4a6f;
+}
+
+.user-container .update-btn:hover {
+  background-color: #e1f0ff;
+  box-shadow: 0 2px 8px rgba(0, 120, 212, 0.15);
+}
+
+.user-container.dark .update-btn:hover {
+  background-color: #254a78;
+}
+
+/* Delete button styling */
+.user-container .delete-btn.light {
+  background-color: #fff1f0;
+  color: #d42a2a;
+  border: 1px solid #ffd7d7;
+}
+
+.user-container .delete-btn.dark {
+  background-color: #3e2a2a;
+  color: #ff7070;
+  border: 1px solid #5e3a3a;
+}
+
+.user-container .delete-btn:hover {
+  background-color: #ffe1e0;
+  box-shadow: 0 2px 8px rgba(212, 42, 42, 0.15);
+}
+
+.user-container.dark .delete-btn:hover {
+  background-color: #4d3535;
+}
+
+/* User activity section */
+.user-container .user-activity {
+  flex: 1;
+  padding: 2rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.user-container.dark .user-activity {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Section titles */
+.user-container .section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  color: inherit;
+}
+
+.user-container.dark .section-title {
+  border-color: #3a3f48;
+}
+
+/* Activity list styling */
+.user-container .activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.user-container .activity-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  padding-left: 1.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.user-container.dark .activity-item {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.user-container .activity-item:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.user-container.dark .activity-item:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Activity marker dots */
+.user-container .activity-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.2rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+  transition: transform 0.2s ease;
+}
+
+.user-container .activity-item:hover::before {
+  transform: scale(1.2);
+}
+
+/* Stats grid with modern styling */
+.user-container .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.user-container .stat-card {
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-container.light .stat-card {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
+
+.user-container.dark .stat-card {
+  background-color: #323640;
+  border: 1px solid #3a3f48;
+}
+
+.user-container .stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.user-container.dark .stat-card:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.18);
+}
+
+.user-container .stat-card h3 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: #666;
+}
+
+.user-container.dark .stat-card h3 {
+  color: #aaa;
+}
+
+.user-container .stat-value {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.user-container.dark .stat-value {
+  background: linear-gradient(135deg, #7cc5ff 0%, #4b6cb7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* WhatsApp button styling */
+.user-container .whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.user-container .whatsapp-btn.light {
+  background-color: #25d366;
+  color: white;
+}
+
+.user-container .whatsapp-btn.dark {
+  background-color: #1a9247;
+  color: white;
+}
+
+.user-container .whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2);
+}
+
+.user-container .whatsapp-btn:active {
+  transform: translateY(0);
+}
+
+.user-container .whatsapp-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: left 0.7s ease;
+}
+
+.user-container .whatsapp-btn:hover::before {
+  left: 100%;
+}
+
+.user-container .whatsapp-btn .icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Loading state styling */
+.user-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.user-loading .loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #0078d4;
+  animation: user-spin 1s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+.user-loading.dark .loading-spinner {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-top-color: #7cc5ff;
+}
+
+@keyframes user-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error state styling */
+.user-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.user-error .error-message {
+  color: #d42a2a;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.user-error.dark .error-message {
+  color: #ff7070;
+}
+
+.user-error .back-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-error.dark .back-button {
+  background-color: #3a3f48;
+  color: #f0f2f5;
+}
+
+.user-error .back-button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.user-error.dark .back-button:hover {
+  background-color: #4a4f58;
+}
+
+/* Responsive design with careful breakpoints */
+@media (max-width: 992px) {
+  .user-container .user-main {
+    padding: 2rem;
+  }
+  
+  .user-container .user-card {
+    flex-direction: column;
+  }
+  
+  .user-container .user-activity {
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  
+  .user-container.dark .user-activity {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+@media (max-width: 768px) {
+  .user-container .user-main {
+    padding: 1.5rem;
+  }
+  
+  .user-container .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .user-container .user-main {
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+  
+  .user-container .user-profile,
+  .user-container .user-activity {
+    padding: 1.5rem;
+  }
+  
+  .user-container .profile-photo {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  
+  .user-container .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .user-container .detail-label {
+    margin-bottom: 0.25rem;
+  }
+  
+  .user-container .user-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .user-container .action-btn {
+    padding: 0.5rem 0.8rem;
+    min-width: 100px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Print styles for better printing */
+@media print {
+  .user-container {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .user-container .user-card {
+    box-shadow: none !important;
+    border: 1px solid #eee;
+  }
+  
+  .user-container .action-btn,
+  .user-container .whatsapp-btn {
+    display: none !important;
+  }
+  
+  .user-container .profile-photo {
+    box-shadow: none !important;
+    border: 1px solid #ddd;
+  }
+}

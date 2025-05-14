@@ -1,0 +1,123 @@
+/* AdminLogin.css - Isolated styles for SerendibGems Admin Login Page */
+.admin-login-container {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: linear-gradient(180deg, #f7f8fa, #d9e0e8); /* Light gray to soft blue-gray */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .admin-login-card {
+    background: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .admin-login-card h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #6b21a8; /* Amethyst purple */
+    margin-bottom: 0.5rem;
+  }
+  
+  .admin-login-subtitle {
+    font-size: 1.1rem;
+    color: #2d3b4a; /* Slightly lighter sapphire */
+    margin-bottom: 1.5rem;
+  }
+  
+  .admin-error-message {
+    background: #fee2e2; /* Light red */
+    color: #dc2626; /* Red */
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .admin-form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  .admin-form-group label {
+    display: block;
+    font-size: 1.1rem;
+    color: #1a2b3c; /* Deep sapphire blue */
+    margin-bottom: 0.5rem;
+  }
+  
+  .admin-form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #d9e0e8; /* Soft blue-gray */
+    border-radius: 0.5rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .admin-form-group input:focus {
+    border-color: #6b21a8; /* Amethyst purple */
+  }
+  
+  .admin-submit-button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    background: #6b21a8; /* Amethyst purple */
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .admin-submit-button:hover {
+    background: #4c1d95; /* Darker amethyst */
+    transform: translateY(-2px);
+  }
+  
+  .admin-loading {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    background: #d9e0e8; /* Soft blue-gray */
+    color: #2d3b4a;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .admin-login-card {
+      padding: 2rem 1.5rem;
+    }
+  
+    .admin-login-card h2 {
+      font-size: 2rem;
+    }
+  
+    .admin-login-subtitle {
+      font-size: 1rem;
+    }
+  
+    .admin-form-group input {
+      padding: 0.6rem;
+    }
+  
+    .admin-submit-button,
+    .admin-loading {
+      padding: 0.8rem;
+      font-size: 1.1rem;
+    }
+  }
