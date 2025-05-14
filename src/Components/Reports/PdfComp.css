@@ -1,0 +1,81 @@
+/* PdfComp CSS */
+.pdf-comp-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.pdf-title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.pdf-page {
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.page-info {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.pagination-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    padding: 8px 16px; 
+    font-size: 1em; 
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.nav-btn:disabled {
+    background-color: #247aeb;
+    cursor: not-allowed;
+}
+
+.prev-btn {
+    background-color: #5c77e3;
+}
+
+.prev-btn:hover {
+    background-color: #213988;
+}
+
+.next-btn {
+    background-color: #9942bb;
+}
+
+.next-btn:hover {
+    background-color: #8829a7;
+}

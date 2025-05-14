@@ -1,0 +1,194 @@
+/* Profile.css - Isolated styles for SerendibGems Profile Page */
+.profile-wrapper {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #1a2b3c; /* Deep sapphire blue */
+    background: linear-gradient(180deg, #f7f8fa, #d9e0e8); /* Light gray to soft blue-gray */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-hero-section {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #003087 0%, #008a5e 100%); /* Sapphire to emerald */
+    color: #ffffff;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 95%);
+  }
+  
+  .hero-heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-description {
+    font-size: 1.75rem;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    opacity: 0.95;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .action-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .login-action {
+    background-color: #ffffff;
+    color: #003087; /* Sapphire blue */
+    border: 2px solid #ffffff;
+  }
+  
+  .login-action:hover {
+    background-color: #003087;
+    color: #ffffff;
+    transform: translateY(-3px);
+  }
+  
+  .signup-action {
+    background-color: #008a5e; /* Emerald green */
+    color: #ffffff;
+    border: 2px solid #008a5e;
+  }
+  
+  .signup-action:hover {
+    background-color: #006644; /* Darker emerald */
+    transform: translateY(-3px);
+  }
+  
+  .admin-login-action {
+    background-color: #6b21a8; /* Amethyst purple */
+    color: #ffffff;
+    border: 2px solid #6b21a8;
+  }
+  
+  .admin-login-action:hover {
+    background-color: #4c1d95; /* Darker amethyst */
+    transform: translateY(-3px);
+  }
+  
+  .profile-main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  
+  .heritage-section,
+  .vision-section,
+  .community-section {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease;
+  }
+  
+  .heritage-section:hover,
+  .vision-section:hover,
+  .community-section:hover {
+    transform: translateY(-8px);
+  }
+  
+  .section-heading {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #003087; /* Sapphire blue */
+    margin-bottom: 1.25rem;
+  }
+  
+  .section-paragraph {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: #2d3b4a; /* Slightly lighter sapphire */
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .secondary-actions {
+    margin-top: 2.5rem;
+  }
+  
+  .profile-footer-section {
+    text-align: center;
+    padding: 2.5rem;
+    background: #1a2b3c; /* Deep sapphire blue */
+    color: #e0e6ed; /* Light blue-gray */
+    font-size: 0.9rem;
+    margin-top: auto;
+  }
+  
+  .profile-footer-section p {
+    margin: 0.3rem 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-heading {
+      font-size: 2.5rem;
+    }
+  
+    .hero-description {
+      font-size: 1.4rem;
+    }
+  
+    .action-buttons {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  
+    .action-button {
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+  
+    .profile-main-content {
+      padding: 3rem 1.5rem;
+    }
+  
+    .section-heading {
+      font-size: 1.9rem;
+    }
+  
+    .section-paragraph {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-heading {
+      font-size: 2rem;
+    }
+  
+    .hero-description {
+      font-size: 1.2rem;
+    }
+  
+    .heritage-section,
+    .vision-section,
+    .community-section {
+      padding: 2rem;
+    }
+  
+    .action-button {
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+    }
+  }
